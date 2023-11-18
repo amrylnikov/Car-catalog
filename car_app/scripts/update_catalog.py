@@ -22,6 +22,3 @@ def update_autoru_catalog():
 
 if __name__ == "__main__":
     update_autoru_catalog()
-
-if __name__ == "__main__":
-    update_autoru_catalog()
