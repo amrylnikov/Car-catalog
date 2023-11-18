@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Catalog</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container">
+        <h1>Car Catalog</h1>
+        <form method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+            <label for="mark">Choose a Mark:</label>
+            <select name="mark" id="mark">
+                {% for mark in marks %}
+                    {% if mark.id == mark_id %}
+                        <option selected="selected" value="{{ mark.id }}" >{{ mark.name }}</option>
+                    {% else %}
+                        <option value="{{ mark.id }}">{{ mark.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type="submit">Show models</button>
+        </form>
+        {% if models %}
+            <h2>Models:</h2>
+            <ul>
+                {% for model in models %}
+                    <li>{{ model.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="post" action="{% url 'update' %}">
+            {% csrf_token %}
+            <button type="submit">Update Catalog</button>
+        </form>
+    </div>
+</body>
+</html>
