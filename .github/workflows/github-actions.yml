@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: |
-          pip install python-dotenv
+          pip install "python-dotenv[cli]"
           python3 -m dotenv --file car_catalog/.env run make test
       - name: Lint with Ruff
         run: |
