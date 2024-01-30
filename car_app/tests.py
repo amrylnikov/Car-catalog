@@ -2,7 +2,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from .models import Mark, Model
 from unittest.mock import patch
-from car_app.scripts.update_catalog import update_autoru_catalog
 
 class CarAppTests(TestCase):
     def setUp(self):
