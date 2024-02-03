@@ -5,7 +5,6 @@ from car_app.scripts.update_catalog import update_autoru_catalog
 def index(request):
     if request.method == 'POST':
         mark_id = request.POST.get('mark')
-        print(f'type(mark_id): {type(int(mark_id))}')
         selected_mark = Mark.objects.get(pk=mark_id)
         models = Model.objects.filter(mark=selected_mark)
         marks = Mark.objects.all()
