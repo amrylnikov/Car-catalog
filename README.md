@@ -21,5 +21,7 @@ This app use car catalog from https://auto.ru/ to show models of choosen car mar
 
 ## Setup
 
-- Use 'pip install --upgrade poetry && poetry build && poetry install' to build the project
-- Run project with 'python manage.py runserver' or 'python3 manage.py runesrver', depending on your console setings.
+- Use this command to build the project:
+> 'pip install --upgrade poetry && poetry build && poetry install' 
+- Run project with this command:
+> 'python manage.py runserver'
